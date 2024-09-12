@@ -2,16 +2,19 @@ package expert.os.books.ddd.chapter03;
 
 public class Player {
 
-    private final String name;
+    private String name;
 
-    private final String position;
+    private String position;
 
-    private final int age;
+    private int age;
 
     public Player(String name, String position, int age) {
         this.name = name;
         this.position = position;
         this.age = age;
+    }
+
+    public Player() {
     }
 
     public String getName() {
