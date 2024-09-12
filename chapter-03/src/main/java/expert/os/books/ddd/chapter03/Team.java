@@ -46,4 +46,8 @@ public class Team {
         Objects.requireNonNull(fifaCode, "FIFA code is required");
         return new Team(name, fifaCode);
     }
+
+    public boolean canAdd() {
+        return players.size() <= 23;
+    }
 }
