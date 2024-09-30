@@ -22,6 +22,9 @@
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.vesion>3.3.0</maven-javadoc-plugin.vesion>
+        <maven.checkstyle.plugin.version>3.4.0</maven.checkstyle.plugin.version>
+        <apache.pdm.plugin.version>3.24.0</apache.pdm.plugin.version>
+        <checkstyle.excludes></checkstyle.excludes>
     </properties>
 
     <dependencies>
@@ -98,6 +101,49 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven.checkstyle.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>verify-style</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <excludes>**/module-info.java,${checkstyle.excludes}</excludes>
+                    <logViolationsToConsole>true</logViolationsToConsole>
+                    <consoleOutput>true</consoleOutput>
+                    <configLocation>checkstyle.xml</configLocation>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${apache.pdm.plugin.version}</version>
+                <configuration>
+                    <rulesets>
+                        <ruleset>pmd/bestpractices.xml</ruleset>
+                        <ruleset>pmd/codestyle.xml</ruleset>
+                        <ruleset>/category/java/security.xml</ruleset>
+                        <ruleset>/category/java/performance.xml</ruleset>
+                    </rulesets>
+                    <failOnViolation>true</failOnViolation>
+                    <printFailingErrors>true</printFailingErrors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
