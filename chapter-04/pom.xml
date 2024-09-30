@@ -120,7 +120,7 @@
                     <excludes>**/module-info.java,${checkstyle.excludes}</excludes>
                     <logViolationsToConsole>true</logViolationsToConsole>
                     <consoleOutput>true</consoleOutput>
-                    <configLocation>checkstyle.xml</configLocation>
+                    <configLocation>pmd/checkstyle.xml</configLocation>
                 </configuration>
             </plugin>
             <plugin>
@@ -129,8 +129,7 @@
                 <version>${apache.pdm.plugin.version}</version>
                 <configuration>
                     <rulesets>
-                        <ruleset>pmd/bestpractices.xml</ruleset>
-                        <ruleset>pmd/codestyle.xml</ruleset>
+                        <ruleset>pmd/pmd-rules.xml</ruleset>
                         <ruleset>/category/java/security.xml</ruleset>
                         <ruleset>/category/java/performance.xml</ruleset>
                     </rulesets>
