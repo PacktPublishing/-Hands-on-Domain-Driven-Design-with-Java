@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter03;
+package expert.os.books.ddd.chapter04;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

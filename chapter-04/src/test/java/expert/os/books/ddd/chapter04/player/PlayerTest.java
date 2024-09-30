@@ -1,11 +1,9 @@
-package expert.os.books.ddd.chapter03.player;
+package expert.os.books.ddd.chapter04.player;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.Year;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
 

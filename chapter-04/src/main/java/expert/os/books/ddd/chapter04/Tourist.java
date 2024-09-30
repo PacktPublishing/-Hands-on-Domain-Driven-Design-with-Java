@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter03;
+package expert.os.books.ddd.chapter04;
 
 import java.util.Collections;
 import java.util.HashSet;
