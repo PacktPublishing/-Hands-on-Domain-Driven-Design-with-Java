@@ -13,6 +13,7 @@
 
     <modules>
         <module>chapter-03</module>
+        <module>chapter-04</module>
     </modules>
     
 </project>
