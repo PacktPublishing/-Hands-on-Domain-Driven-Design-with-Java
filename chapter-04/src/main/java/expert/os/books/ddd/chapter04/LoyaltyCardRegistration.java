@@ -12,6 +12,6 @@ public class LoyaltyCardRegistration {
         this.id = id;
         this.customer = customer;
         this.registrationDate = registrationDate;
-        this.status = CardStatus.ACTIVE;  // Default status upon registration
+        this.status = CardStatus.ACTIVE;
     }
 }
