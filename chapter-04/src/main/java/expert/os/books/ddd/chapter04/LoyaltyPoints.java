@@ -1,19 +1,9 @@
 package expert.os.books.ddd.chapter04;
 
-public class LoyaltyPoints {
+public record LoyaltyPoints(int points) {
 
-    private int points;
-
-    public LoyaltyPoints(int initialPoints) {
-        this.points = initialPoints;
-    }
-
-    public int getPoints() {
-        return points;
-    }
-
-    public void addPoints(int additionalPoints) {
-        this.points += additionalPoints;
+    public LoyaltyPoints addPoints(int additionalPoints) {
+        return new LoyaltyPoints(this.points + additionalPoints);
     }
 
     public boolean canUpgradeToPremium() {
