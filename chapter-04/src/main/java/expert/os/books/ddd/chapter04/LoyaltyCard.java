@@ -26,7 +26,7 @@ public class LoyaltyCard {
     }
 
     public int getPoints() {
-        return loyaltyPoints.getPoints();
+        return loyaltyPoints.points();
     }
 
     public boolean isPremium() {
@@ -38,7 +38,7 @@ public class LoyaltyCard {
     }
 
     public void addPoints(int points) {
-        loyaltyPoints.addPoints(points);
+        this.loyaltyPoints = loyaltyPoints.addPoints(points);
         updateCategory();
         if (loyaltyPoints.canUpgradeToPremium()) {
             this.isPremium = true;
@@ -46,6 +46,6 @@ public class LoyaltyCard {
     }
 
     private void updateCategory() {
-        this.category = CustomerCategory.getCategoryByPoints(loyaltyPoints.getPoints());
+        this.category = CustomerCategory.getCategoryByPoints(loyaltyPoints.points());
     }
 }
