@@ -5,7 +5,7 @@ public enum CustomerCategory {
     BRONZE(0, 0),
     SILVER(1000, 5),
     GOLD(5000, 10),
-    PLATINUM(10000, 15);
+    PLATINUM(10_000, 15);
 
     private final int pointsThreshold;
     private final int discountPercentage;
