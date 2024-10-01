@@ -14,4 +14,32 @@ public class LoyaltyCardRegistration {
         this.registrationDate = registrationDate;
         this.status = CardStatus.ACTIVE;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public LocalDate getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public CardStatus getStatus() {
+        return status;
+    }
+
+    public void suspend() {
+        this.status = CardStatus.SUSPENDED;
+    }
+
+    public void activate() {
+        this.status = CardStatus.ACTIVE;
+    }
+
+    public void deactivate() {
+        this.status = CardStatus.INACTIVE;
+    }
 }
