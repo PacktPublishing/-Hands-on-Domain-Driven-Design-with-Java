@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter04;
+package expert.os.books.ddd.chapter04.domain;
 
 import java.time.LocalDate;
 

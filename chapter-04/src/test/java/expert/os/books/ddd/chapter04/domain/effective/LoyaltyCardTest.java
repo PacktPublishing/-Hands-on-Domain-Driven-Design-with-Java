@@ -1,8 +1,8 @@
-package expert.os.books.ddd.chapter04.effective;
+package expert.os.books.ddd.chapter04.domain.effective;
 
-import expert.os.books.ddd.chapter04.Customer;
-import expert.os.books.ddd.chapter04.CustomerCategory;
-import expert.os.books.ddd.chapter04.LoyaltyCard;
+import expert.os.books.ddd.chapter04.domain.Customer;
+import expert.os.books.ddd.chapter04.domain.CustomerCategory;
+import expert.os.books.ddd.chapter04.domain.LoyaltyCard;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter04;
+package expert.os.books.ddd.chapter04.domain;
 
 public class LoyaltyCard {
 
