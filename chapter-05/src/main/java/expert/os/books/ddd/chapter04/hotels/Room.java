@@ -6,7 +6,7 @@ import org.jmolecules.ddd.annotation.Identity;
 @Entity
 public class Room {
 
-    private static final Guest EMPTY_GUEST = new Guest("0", "EMPTY");
+    static final Guest EMPTY_GUEST = new Guest("0", "EMPTY");
 
     @Identity
     private int number;
@@ -28,4 +28,11 @@ public class Room {
     public void cleanRoom() {
         this.guest = EMPTY_GUEST;
     }
+
+    public Room(int number, Guest guest) {
+        this.number = number;
+        this.guest = guest;
+    }
+
+
 }

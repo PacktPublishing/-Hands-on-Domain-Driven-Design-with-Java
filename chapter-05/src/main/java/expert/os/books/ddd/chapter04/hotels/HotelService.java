@@ -10,8 +10,11 @@ public class HotelService {
 
     private final Hotel hotel;
 
-    public HotelService(Hotel hotel) {
+    private final PaymentService paymentService;
+
+    public HotelService(Hotel hotel, PaymentService paymentService) {
         this.hotel = hotel;
+        this.paymentService = paymentService;
     }
 
     public Room checkIn(Guest guest) {
@@ -20,6 +23,7 @@ public class HotelService {
         }
 
         var emptyRoom = hotel.findEmptyRoom().orElseThrow(() -> new IllegalStateException("No empty room"));
+        paymentService.pay(guest);
         emptyRoom.setGuest(guest);
         return hotel.checkIn(emptyRoom);
     }
