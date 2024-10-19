@@ -26,6 +26,7 @@
         <apache.pdm.plugin.version>3.24.0</apache.pdm.plugin.version>
         <checkstyle.excludes></checkstyle.excludes>
         <jmolecules.version>1.9.0</jmolecules.version>
+        <org.mapstruct.version>1.6.2</org.mapstruct.version>
     </properties>
 
     <dependencies>
@@ -39,6 +40,18 @@
             <artifactId>jmolecules-layered-architecture</artifactId>
             <version>${jmolecules.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>${org.mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${org.mapstruct.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
