@@ -25,15 +25,20 @@
         <maven.checkstyle.plugin.version>3.4.0</maven.checkstyle.plugin.version>
         <apache.pdm.plugin.version>3.24.0</apache.pdm.plugin.version>
         <checkstyle.excludes></checkstyle.excludes>
+        <jmolecules.version>1.9.0</jmolecules.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.jmolecules</groupId>
             <artifactId>jmolecules-ddd</artifactId>
-            <version>1.9.0</version>
+            <version>${jmolecules.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.jmolecules</groupId>
+            <artifactId>jmolecules-layered-architecture</artifactId>
+            <version>${jmolecules.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
