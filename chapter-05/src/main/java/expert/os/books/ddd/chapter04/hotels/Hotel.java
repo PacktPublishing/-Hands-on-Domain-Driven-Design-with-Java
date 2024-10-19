@@ -13,4 +13,7 @@ public interface Hotel {
 
     Optional<Room> reservation(String number);
 
+    Long countBy();
+
+    Optional<Room> findEmptyRoom();
 }
