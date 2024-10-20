@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter04.hotels.application;
+package expert.os.books.ddd.chapter04.hotels.controller;
 
 import expert.os.books.ddd.chapter04.hotels.Guest;
 import expert.os.books.ddd.chapter04.hotels.Room;

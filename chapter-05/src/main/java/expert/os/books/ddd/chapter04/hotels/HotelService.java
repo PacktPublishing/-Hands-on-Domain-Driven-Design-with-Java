@@ -1,10 +1,12 @@
 package expert.os.books.ddd.chapter04.hotels;
 
+import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.jmolecules.ddd.annotation.Service;
 
 import java.util.Objects;
 import java.util.Optional;
 
+@ApplicationLayer
 @Service
 public class HotelService {
 
