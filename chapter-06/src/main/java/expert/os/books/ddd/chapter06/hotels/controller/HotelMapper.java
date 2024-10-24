@@ -1,7 +1,7 @@
-package expert.os.books.ddd.chapter04.hotels.controller;
+package expert.os.books.ddd.chapter06.hotels.controller;
 
-import expert.os.books.ddd.chapter04.hotels.Guest;
-import expert.os.books.ddd.chapter04.hotels.Room;
+import expert.os.books.ddd.chapter06.hotels.Guest;
+import expert.os.books.ddd.chapter06.hotels.Room;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
