@@ -4,6 +4,6 @@
  * It contains the implementation of the repository interfaces defined in the domain layer.
  */
 @InfrastructureLayer
-package expert.os.books.ddd.chapter04.hotels.infra;
+package expert.os.books.ddd.chapter05.hotels.infra;
 
 import org.jmolecules.architecture.layered.InfrastructureLayer;

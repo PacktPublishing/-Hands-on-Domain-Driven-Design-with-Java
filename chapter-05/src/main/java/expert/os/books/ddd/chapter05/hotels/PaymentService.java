@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter04.hotels;
+package expert.os.books.ddd.chapter05.hotels;
 
 import org.jmolecules.ddd.annotation.Service;
 

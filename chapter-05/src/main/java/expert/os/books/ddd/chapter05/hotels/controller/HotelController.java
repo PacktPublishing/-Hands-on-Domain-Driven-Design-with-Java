@@ -1,7 +1,7 @@
-package expert.os.books.ddd.chapter04.hotels.controller;
+package expert.os.books.ddd.chapter05.hotels.controller;
 
-import expert.os.books.ddd.chapter04.hotels.HotelService;
-import expert.os.books.ddd.chapter04.hotels.Room;
+import expert.os.books.ddd.chapter05.hotels.HotelService;
+import expert.os.books.ddd.chapter05.hotels.Room;
 
 //Here we hava either a controller or a resource to expose the application services
 public class HotelController {

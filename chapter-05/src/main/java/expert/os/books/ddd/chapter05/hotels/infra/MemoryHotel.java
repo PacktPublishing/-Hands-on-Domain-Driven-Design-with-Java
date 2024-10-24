@@ -1,7 +1,7 @@
-package expert.os.books.ddd.chapter04.hotels.infra;
+package expert.os.books.ddd.chapter05.hotels.infra;
 
-import expert.os.books.ddd.chapter04.hotels.Hotel;
-import expert.os.books.ddd.chapter04.hotels.Room;
+import expert.os.books.ddd.chapter05.hotels.Hotel;
+import expert.os.books.ddd.chapter05.hotels.Room;
 import org.jmolecules.architecture.layered.InfrastructureLayer;
 
 import java.util.Optional;
