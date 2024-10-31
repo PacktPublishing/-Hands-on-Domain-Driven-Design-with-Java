@@ -9,7 +9,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class CustomerCategoryTest {
 
     @ParameterizedTest
-    @ValueSource(ints = {0, 500, 999})
+    @ValueSource(ints = {-20, -10, 0, 500, 999})
     @DisplayName("should return Bronze category for points less than 1000")
     void shouldReturnBronzeCategoryForPointsBelow1000(int points) {
         CustomerCategory category = CustomerCategory.getCategoryByPoints(points);
