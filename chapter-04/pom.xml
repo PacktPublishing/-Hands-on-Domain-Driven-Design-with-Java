@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <junit.version>5.8.2</junit.version>
+        <junit.version>5.11.3</junit.version>
         <mockito.verson>4.5.1</mockito.verson>
         <maven.checkstyle.plugin.version>3.1.0</maven.checkstyle.plugin.version>
         <maven.compile.version>3.8.1</maven.compile.version>
@@ -25,15 +25,20 @@
         <maven.checkstyle.plugin.version>3.4.0</maven.checkstyle.plugin.version>
         <apache.pdm.plugin.version>3.24.0</apache.pdm.plugin.version>
         <checkstyle.excludes></checkstyle.excludes>
+        <jmolecules.version>1.9.0</jmolecules.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.jmolecules</groupId>
             <artifactId>jmolecules-ddd</artifactId>
-            <version>1.9.0</version>
+            <version>${jmolecules.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.jmolecules</groupId>
+            <artifactId>jmolecules-layered-architecture</artifactId>
+            <version>${jmolecules.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -65,13 +70,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.tngtech.archunit</groupId>
-            <artifactId>archunit-junit5</artifactId>
-            <version>1.3.0</version>
+            <groupId>org.jmolecules.integrations</groupId>
+            <artifactId>jmolecules-archunit</artifactId>
+            <version>1.6.0</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
 
     <build>

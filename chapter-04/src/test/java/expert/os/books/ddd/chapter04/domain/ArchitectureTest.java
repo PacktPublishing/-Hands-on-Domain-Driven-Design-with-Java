@@ -17,4 +17,5 @@ class ArchitectureTest {
                 .should().dependOnClassesThat().resideInAPackage("..application..")
                 .check(importedClasses);
     }
+
 }
