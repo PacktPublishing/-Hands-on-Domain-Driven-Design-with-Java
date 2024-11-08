@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>expert.os.books.ddd</groupId>
-    <artifactId>chapter-06</artifactId>
+    <artifactId>chapter-07</artifactId>
     <version>1.0.0</version>
 
-    <name>chapter-06</name>
-    <url>http://www.os.expert</url>
+    <name>chapter-07</name>
+    <url>https://www.os.expert</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

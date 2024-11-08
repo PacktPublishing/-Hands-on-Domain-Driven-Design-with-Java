@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter06.hotels;
+package expert.os.books.ddd.chapter07.hotels;
 
 import org.jmolecules.architecture.layered.ApplicationLayer;
 import org.jmolecules.ddd.annotation.Service;

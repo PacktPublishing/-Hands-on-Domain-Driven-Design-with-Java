@@ -1,8 +1,8 @@
-package expert.os.books.ddd.chapter06.hotels.controller;
+package expert.os.books.ddd.chapter07.hotels.controller;
 
-import expert.os.books.ddd.chapter06.hotels.CheckInUseCase;
-import expert.os.books.ddd.chapter06.hotels.CheckOutUseCase;
-import expert.os.books.ddd.chapter06.hotels.Room;
+import expert.os.books.ddd.chapter07.hotels.CheckInUseCase;
+import expert.os.books.ddd.chapter07.hotels.CheckOutUseCase;
+import expert.os.books.ddd.chapter07.hotels.Room;
 import org.jmolecules.architecture.hexagonal.Port;
 
 //Here we hava either a controller or a resource to expose the application services

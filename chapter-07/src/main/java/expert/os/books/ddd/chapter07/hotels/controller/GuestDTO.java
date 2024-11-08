@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter06.hotels.controller;
+package expert.os.books.ddd.chapter07.hotels.controller;
 
 import org.jmolecules.architecture.hexagonal.Adapter;
 

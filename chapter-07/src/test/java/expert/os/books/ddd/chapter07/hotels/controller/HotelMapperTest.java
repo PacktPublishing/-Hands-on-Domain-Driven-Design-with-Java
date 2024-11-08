@@ -1,7 +1,7 @@
-package expert.os.books.ddd.chapter06.hotels.controller;
+package expert.os.books.ddd.chapter07.hotels.controller;
 
-import expert.os.books.ddd.chapter06.hotels.Guest;
-import expert.os.books.ddd.chapter06.hotels.Room;
+import expert.os.books.ddd.chapter07.hotels.Guest;
+import expert.os.books.ddd.chapter07.hotels.Room;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
 

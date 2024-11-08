@@ -1,7 +1,7 @@
-package expert.os.books.ddd.chapter06.hotels.infra;
+package expert.os.books.ddd.chapter07.hotels.infra;
 
-import expert.os.books.ddd.chapter06.hotels.Guest;
-import expert.os.books.ddd.chapter06.hotels.PaymentService;
+import expert.os.books.ddd.chapter07.hotels.Guest;
+import expert.os.books.ddd.chapter07.hotels.PaymentService;
 
 import java.util.logging.Logger;
 
