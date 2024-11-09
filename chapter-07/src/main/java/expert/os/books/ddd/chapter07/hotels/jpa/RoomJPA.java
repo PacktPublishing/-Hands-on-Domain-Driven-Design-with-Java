@@ -5,7 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 class RoomJPA {
@@ -14,7 +14,7 @@ class RoomJPA {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long number;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "guest_id", referencedColumnName = "id")
     private GuestJPA guest;
 
