@@ -1,44 +1,60 @@
 package expert.os.books.ddd.chapter07.hotels.nosql;
 
 import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.UpdateOptions;
+import com.mongodb.client.model.Updates;
 import expert.os.books.ddd.chapter07.hotels.Hotel;
 import expert.os.books.ddd.chapter07.hotels.Room;
+import org.bson.conversions.Bson;
+
+import static com.mongodb.client.model.Filters.eq;
+
 
 import java.util.Optional;
 
 public class HotelMongoDB implements Hotel {
 
-    private final MongoClient mongoClient;
-
+    private final MongoCollection<RoomNoSQL> roomCollection;
     private final NoSQLMapper mapper;
 
     public HotelMongoDB(MongoClient mongoClient, NoSQLMapper mapper) {
-        this.mongoClient = mongoClient;
+        MongoDatabase database = mongoClient.getDatabase("hotel");
+        this.roomCollection = database.getCollection("rooms", RoomNoSQL.class);
         this.mapper = mapper;
     }
 
     @Override
     public Room checkIn(Room room) {
-        return null;
+        RoomNoSQL roomNoSQL = mapper.toEntity(room);
+        Bson filter = eq("number", room.getNumber());
+
+        roomCollection.updateOne(filter, Updates.set("guest", roomNoSQL.getGuest()), new UpdateOptions().upsert(true));
+        return mapper.toDomain(roomNoSQL);
     }
 
     @Override
     public void checkOut(Room room) {
-
+        Bson filter = eq("number", room.getNumber());
+        roomCollection.updateOne(filter, Updates.unset("guest"));
     }
 
     @Override
     public Optional<Room> reservation(String number) {
-        return Optional.empty();
+        RoomNoSQL roomNoSQL = roomCollection.find(eq("number", Long.parseLong(number))).first();
+        return Optional.ofNullable(roomNoSQL).map(mapper::toDomain);
     }
 
     @Override
     public Long countBy() {
-        return 0;
+        return roomCollection.countDocuments();
     }
 
     @Override
     public Optional<Room> findEmptyRoom() {
-        return Optional.empty();
+        RoomNoSQL emptyRoom = roomCollection.find(Filters.eq("guest", null)).first();
+        return Optional.ofNullable(emptyRoom).map(mapper::toDomain);
     }
 }
