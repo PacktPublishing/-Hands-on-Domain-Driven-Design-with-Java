@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+import java.util.Objects;
+
 @Entity
 class RoomJPA {
 
@@ -45,5 +47,22 @@ class RoomJPA {
 
     public GuestJPA getGuest() {
         return guest;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        RoomJPA roomJPA = (RoomJPA) o;
+        return Objects.equals(number, roomJPA.number);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(number);
     }
 }
