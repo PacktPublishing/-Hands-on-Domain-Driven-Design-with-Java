@@ -20,9 +20,8 @@ public class HotelMongoDB implements Hotel {
     private final MongoCollection<RoomNoSQL> roomCollection;
     private final NoSQLMapper mapper;
 
-    public HotelMongoDB(MongoClient mongoClient, NoSQLMapper mapper) {
-        MongoDatabase database = mongoClient.getDatabase("hotel");
-        this.roomCollection = database.getCollection("rooms", RoomNoSQL.class);
+    public HotelMongoDB(MongoCollection<RoomNoSQL> roomCollection, NoSQLMapper mapper) {
+        this.roomCollection = roomCollection;
         this.mapper = mapper;
     }
 

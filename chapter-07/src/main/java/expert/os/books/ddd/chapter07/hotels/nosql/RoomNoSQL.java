@@ -1,9 +1,13 @@
 package expert.os.books.ddd.chapter07.hotels.nosql;
 
-class RoomNoSQL {
+import org.bson.codecs.pojo.annotations.BsonProperty;
 
+public class RoomNoSQL {
+
+    @BsonProperty("number")
     private Long number;
 
+    @BsonProperty("guest")
     private GuestNoSQL guest;
 
     RoomNoSQL(Long room, GuestNoSQL guestNoSQL) {
