@@ -14,9 +14,6 @@ class GuestNoSQL {
     public GuestNoSQL() {
     }
 
-    public Long getId() {
-        return id;
-    }
 
     public String getDocumentNumber() {
         return documentNumber;
@@ -24,10 +21,6 @@ class GuestNoSQL {
 
     public String getName() {
         return name;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public void setDocumentNumber(String documentNumber) {
