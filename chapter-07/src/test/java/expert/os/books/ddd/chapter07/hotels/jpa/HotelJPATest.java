@@ -88,7 +88,7 @@ class HotelJPATest {
 
         SoftAssertions.assertSoftly(softly ->{
             softly.assertThat(result).isPresent();
-            softly.assertThat(result.get().getGuest()).isEqualTo(Room.EMPTY_GUEST);
+            softly.assertThat(result.get().getGuest()).isNull();
         });
     }
 

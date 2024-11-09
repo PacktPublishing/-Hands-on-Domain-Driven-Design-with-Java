@@ -23,15 +23,27 @@ public class HotelJPA implements Hotel {
     public Room checkIn(Room room) {
         try (var session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
+
             RoomJPA roomJPA = session.get(RoomJPA.class, room.getNumber());
             if (roomJPA != null) {
-                // Map the guest from the domain object to the JPA entity
                 GuestJPA guestJPA = mapper.toEntity(room.getGuest());
+
+                GuestJPA existingGuest = (GuestJPA) session
+                        .createQuery("from GuestJPA where documentNumber = :documentNumber")
+                        .setParameter("documentNumber", guestJPA.getDocumentNumber())
+                        .uniqueResult();
+
+                if (existingGuest == null) {
+                    session.save(guestJPA);
+                } else {
+                    guestJPA = existingGuest;
+                }
                 roomJPA.setGuest(guestJPA);
                 session.saveOrUpdate(roomJPA);
                 transaction.commit();
-                return mapper.toDomain(roomJPA);  // Return the updated room with the guest assigned
+                return mapper.toDomain(roomJPA);
             }
+
             transaction.rollback();
             throw new IllegalArgumentException("Room not found");
         }
