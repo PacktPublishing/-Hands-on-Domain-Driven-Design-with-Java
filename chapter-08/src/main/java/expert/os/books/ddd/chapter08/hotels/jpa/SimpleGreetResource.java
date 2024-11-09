@@ -1,5 +1,5 @@
 
-package org.soujava.samples.hotel;
+package expert.os.books.ddd.chapter08.hotels.jpa;
 
 import org.eclipse.microprofile.metrics.MetricUnits;
 import org.eclipse.microprofile.metrics.annotation.Counted;

@@ -1,5 +1,5 @@
 
-package org.soujava.samples.hotel;
+package expert.os.books.ddd.chapter08.hotels.jpa;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;

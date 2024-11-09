@@ -1,4 +1,4 @@
-package org.soujava.samples.hotel;
+package expert.os.books.ddd.chapter08.hotels.jpa;
 
 public class Message {
 

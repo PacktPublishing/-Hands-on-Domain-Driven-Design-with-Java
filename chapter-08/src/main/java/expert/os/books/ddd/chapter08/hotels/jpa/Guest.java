@@ -1,4 +1,4 @@
-package org.soujava.samples.hotel;
+package expert.os.books.ddd.chapter08.hotels.jpa;
 
 import jakarta.nosql.Column;
 import jakarta.nosql.Embeddable;

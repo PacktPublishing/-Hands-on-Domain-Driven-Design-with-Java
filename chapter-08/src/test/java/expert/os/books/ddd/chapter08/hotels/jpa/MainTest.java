@@ -1,5 +1,5 @@
 
-package org.soujava.samples.hotel;
+package expert.os.books.ddd.chapter08.hotels.jpa;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.client.WebTarget;

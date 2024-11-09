@@ -1,4 +1,4 @@
-package org.soujava.samples.hotel;
+package expert.os.books.ddd.chapter08.hotels.jpa;
 
 import jakarta.data.page.Page;
 import jakarta.data.page.PageRequest;
@@ -8,7 +8,6 @@ import jakarta.data.repository.Find;
 import jakarta.data.repository.Repository;
 import jakarta.data.repository.Save;
 
-import java.util.List;
 import java.util.Optional;
 
 @Repository
