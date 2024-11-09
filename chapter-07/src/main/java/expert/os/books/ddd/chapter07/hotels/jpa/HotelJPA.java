@@ -21,15 +21,16 @@ public class HotelJPA implements Hotel {
 
     @Override
     public Room checkIn(Room room) {
-        try (Session session = sessionFactory.openSession()) {
+        try (var session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             RoomJPA roomJPA = session.get(RoomJPA.class, room.getNumber());
             if (roomJPA != null) {
-                var guestJPA = mapper.toEntity(room.getGuest());
-
+                // Map the guest from the domain object to the JPA entity
+                GuestJPA guestJPA = mapper.toEntity(room.getGuest());
+                roomJPA.setGuest(guestJPA);
                 session.saveOrUpdate(roomJPA);
                 transaction.commit();
-                return mapper.toDomain(roomJPA);
+                return mapper.toDomain(roomJPA);  // Return the updated room with the guest assigned
             }
             transaction.rollback();
             throw new IllegalArgumentException("Room not found");

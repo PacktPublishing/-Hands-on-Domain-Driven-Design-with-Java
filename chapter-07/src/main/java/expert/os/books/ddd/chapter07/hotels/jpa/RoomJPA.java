@@ -19,6 +19,10 @@ public class RoomJPA {
     private GuestJPA guest;
 
 
+    public void setGuest(GuestJPA guest) {
+        this.guest = guest;
+    }
+
     public void cleanRoom() {
         this.guest = null;
     }
