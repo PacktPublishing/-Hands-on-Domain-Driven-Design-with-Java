@@ -1,5 +1,5 @@
 
-package expert.os.books.ddd.chapter08.hotels.jpa;
+package expert.os.books.ddd.chapter08.hotels;
 
 import java.util.concurrent.atomic.AtomicReference;
 

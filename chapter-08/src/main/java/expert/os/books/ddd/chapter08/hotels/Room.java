@@ -1,4 +1,4 @@
-package expert.os.books.ddd.chapter08.hotels.jpa;
+package expert.os.books.ddd.chapter08.hotels;
 
 import jakarta.nosql.Column;
 import jakarta.nosql.Entity;
