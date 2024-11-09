@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class GuestJPA {
+class GuestJPA {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,4 +19,35 @@ public class GuestJPA {
     @Column
     private String name;
 
+    GuestJPA(String documentNumber, String name) {
+        this.documentNumber = documentNumber;
+        this.name = name;
+    }
+
+    public GuestJPA() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getDocumentNumber() {
+        return documentNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setDocumentNumber(String documentNumber) {
+        this.documentNumber = documentNumber;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
