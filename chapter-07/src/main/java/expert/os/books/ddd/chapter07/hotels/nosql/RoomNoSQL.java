@@ -1,33 +1,21 @@
-package expert.os.books.ddd.chapter07.hotels.jpa;
+package expert.os.books.ddd.chapter07.hotels.nosql;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+class RoomNoSQL {
 
-@Entity
-class RoomJPA {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long number;
 
-    @OneToOne
-    @JoinColumn(name = "guest_id", referencedColumnName = "id")
-    private GuestJPA guest;
+    private GuestNoSQL guest;
 
-    RoomJPA(Long room, GuestJPA guestJPA) {
+    RoomNoSQL(Long room, GuestNoSQL guestNoSQL) {
         this.number = Long.valueOf(room);
-        this.guest = guestJPA;
+        this.guest = guestNoSQL;
     }
 
-    public RoomJPA() {
+    public RoomNoSQL() {
     }
 
 
-    public void setGuest(GuestJPA guest) {
+    public void setGuest(GuestNoSQL guest) {
         this.guest = guest;
     }
 
@@ -43,7 +31,7 @@ class RoomJPA {
         this.number = number;
     }
 
-    public GuestJPA getGuest() {
+    public GuestNoSQL getGuest() {
         return guest;
     }
 }

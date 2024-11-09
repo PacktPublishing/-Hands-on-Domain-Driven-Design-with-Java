@@ -1,30 +1,17 @@
-package expert.os.books.ddd.chapter07.hotels.jpa;
+package expert.os.books.ddd.chapter07.hotels.nosql;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+class GuestNoSQL {
 
-@Entity
-class GuestJPA {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column
     private String documentNumber;
 
-    @Column
     private String name;
 
-    GuestJPA(String documentNumber, String name) {
+    GuestNoSQL(String documentNumber, String name) {
         this.documentNumber = documentNumber;
         this.name = name;
     }
 
-    public GuestJPA() {
+    public GuestNoSQL() {
     }
 
     public Long getId() {
