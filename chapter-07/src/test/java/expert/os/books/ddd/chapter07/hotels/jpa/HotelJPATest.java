@@ -86,20 +86,20 @@ class HotelJPATest {
 
         Optional<Room> result = hotelJPA.reservation("101");
 
-        SoftAssertions softly = new SoftAssertions();
-        softly.assertThat(result).isPresent();
-        softly.assertThat(result.get().getGuest()).isEqualTo(Room.EMPTY_GUEST);
-        softly.assertAll();
+        SoftAssertions.assertSoftly(softly ->{
+            softly.assertThat(result).isPresent();
+            softly.assertThat(result.get().getGuest()).isEqualTo(Room.EMPTY_GUEST);
+        });
     }
 
     @Test
     void shouldFindEmptyRoom() {
         Optional<Room> emptyRoom = hotelJPA.findEmptyRoom();
 
-        SoftAssertions softly = new SoftAssertions();
-        softly.assertThat(emptyRoom).isPresent();
-        softly.assertThat(emptyRoom.get().getNumber()).isEqualTo(101);
-        softly.assertAll();
+        SoftAssertions.assertSoftly(softly -> {
+            softly.assertThat(emptyRoom).isPresent();
+            softly.assertThat(emptyRoom.get().getNumber()).isEqualTo(101);
+        });
     }
 
     @Test
