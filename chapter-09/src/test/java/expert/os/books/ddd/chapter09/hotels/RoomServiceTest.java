@@ -97,19 +97,17 @@ class RoomServiceTest {
 
         Room room = roomRepository.save(new Room(6L, null));
 
-        Optional<Room> retrievedRoom = roomService.reservation(room.getNumber());
+        var retrievedRoom = roomService.reservation(room.getNumber());
 
         SoftAssertions.assertSoftly(softly -> {
-            softly.assertThat(retrievedRoom).isPresent();
-            softly.assertThat(retrievedRoom.get().getNumber()).isEqualTo(room.getNumber());
+            softly.assertThat(retrievedRoom.getNumber()).isEqualTo(room.getNumber());
         });
     }
 
     @Test
     void shouldReturnEmptyReservationWhenRoomDoesNotExist() {
-        Optional<Room> retrievedRoom = roomService.reservation(7L);
-
-        assertThat(retrievedRoom).isNotPresent();
+        assertThatThrownBy(() -> roomService.reservation(7L))
+                .isInstanceOf(EntityNotFoundException.class);
     }
 
     @Test

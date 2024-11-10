@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Logger;
 
 @RestController
@@ -43,9 +42,8 @@ public class HotelController {
     @GetMapping("/{number}")
     public ResponseEntity<Room> getReservation(@PathVariable Long number) {
         LOGGER.info("Finding reservation: " + number);
-        Optional<Room> room = roomService.reservation(number);
-        return room.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
+        var room = roomService.reservation(number);
+        return ResponseEntity.ok(room);
     }
 
     @PutMapping
@@ -58,13 +56,9 @@ public class HotelController {
     @DeleteMapping("/{number}")
     public ResponseEntity<Void> checkOut(@PathVariable Long number) {
         LOGGER.info("Check out: " + number);
-        Optional<Room> room = roomService.reservation(number);
-        if (room.isPresent()) {
-            roomService.checkOut(room.get());
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        var room = roomService.reservation(number);
+        roomService.checkOut(room);
+        return ResponseEntity.noContent().build();
     }
 }
 

@@ -38,16 +38,17 @@ public class RoomService {
     }
 
     @Transactional
-    public void checkOut(Room room) {
+    public Room checkOut(Room room) {
         Room roomEntity = roomRepository.findByNumber(room.getNumber())
                 .orElseThrow(() -> new EntityNotFoundException("Room not found, the room number is " + room.getNumber()));
 
         roomEntity.setGuest(null);
-        roomRepository.save(roomEntity);
+        return roomRepository.save(roomEntity);
     }
 
-    public Optional<Room> reservation(Long number) {
-        return roomRepository.findByNumber(number);
+    public Room reservation(Long number) {
+        return roomRepository.findByNumber(number)
+                .orElseThrow(() -> new EntityNotFoundException("Room not found, the room number is " + number));
     }
 
     public Long countBy() {
