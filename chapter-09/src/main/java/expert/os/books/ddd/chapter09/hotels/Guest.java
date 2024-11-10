@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import java.util.Objects;
 
 @Entity
-class Guest {
+public class Guest {
 
     @Id
     private Long id;

@@ -10,7 +10,7 @@ import jakarta.persistence.ManyToOne;
 import java.util.Objects;
 
 @Entity
-class Room {
+public class Room {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
