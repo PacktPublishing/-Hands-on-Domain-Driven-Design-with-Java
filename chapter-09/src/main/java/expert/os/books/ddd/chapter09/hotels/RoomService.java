@@ -28,7 +28,7 @@ public class RoomService {
     @Transactional
     public Room checkIn(Room room) {
         Room roomEntity = roomRepository.findByNumber(room.getNumber())
-                .orElseThrow(() -> new EntityNotFoundException("Room not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Room not found, the room number is " + room.getNumber()));
 
         Guest guest = guestRepository.findByDocumentNumber(room.getGuest().getDocumentNumber())
                 .orElseGet(() -> guestRepository.save(room.getGuest()));
@@ -40,7 +40,7 @@ public class RoomService {
     @Transactional
     public void checkOut(Room room) {
         Room roomEntity = roomRepository.findByNumber(room.getNumber())
-                .orElseThrow(() -> new EntityNotFoundException("Room not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Room not found, the room number is " + room.getNumber()));
 
         roomEntity.setGuest(null);
         roomRepository.save(roomEntity);
