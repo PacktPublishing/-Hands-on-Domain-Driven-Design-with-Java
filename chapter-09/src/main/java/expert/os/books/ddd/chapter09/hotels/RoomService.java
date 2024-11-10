@@ -1,5 +1,6 @@
 package expert.os.books.ddd.chapter09.hotels;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +20,7 @@ public class RoomService {
     @Transactional
     public Room checkIn(Room room) {
         Room roomEntity = roomRepository.findByNumber(room.getNumber())
-                .orElseThrow(() -> new IllegalArgumentException("Room not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Room not found"));
 
         Guest guest = guestRepository.findByDocumentNumber(room.getGuest().getDocumentNumber())
                 .orElseGet(() -> guestRepository.save(room.getGuest()));
@@ -31,9 +32,9 @@ public class RoomService {
     @Transactional
     public void checkOut(Room room) {
         Room roomEntity = roomRepository.findByNumber(room.getNumber())
-                .orElseThrow(() -> new IllegalArgumentException("Room not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Room not found"));
 
-        roomEntity.setGuest(null);  // Clearing guest on checkout
+        roomEntity.setGuest(null);
         roomRepository.save(roomEntity);
     }
 

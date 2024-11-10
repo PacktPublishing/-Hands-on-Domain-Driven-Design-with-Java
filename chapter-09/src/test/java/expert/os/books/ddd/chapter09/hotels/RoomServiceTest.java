@@ -1,4 +1,5 @@
 package expert.os.books.ddd.chapter09.hotels;
+import jakarta.persistence.EntityNotFoundException;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -50,10 +51,7 @@ class RoomServiceTest {
     @Test
     void shouldCheckInWhenGuestDoesNotExist() {
         Guest newGuest = new Guest("987654321", "Jane Doe");
-        Room room = new Room();
-        room.setNumber(2L);
-        roomRepository.save(room);
-
+        Room room =  roomRepository.save(new Room(2L, null));
         room.setGuest(newGuest);
         Room checkedInRoom = roomService.checkIn(room);
 
@@ -71,7 +69,7 @@ class RoomServiceTest {
         room.setNumber(3L);
 
         assertThatThrownBy(() -> roomService.checkIn(room))
-                .isInstanceOf(IllegalArgumentException.class)
+                .isInstanceOf(EntityNotFoundException.class)
                 .hasMessage("Room not found");
     }
 
@@ -92,7 +90,7 @@ class RoomServiceTest {
         room.setNumber(5L);
 
         assertThatThrownBy(() -> roomService.checkOut(room))
-                .isInstanceOf(IllegalArgumentException.class)
+                .isInstanceOf(EntityNotFoundException.class)
                 .hasMessage("Room not found");
     }
 
