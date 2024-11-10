@@ -52,8 +52,8 @@ class RoomServiceTest {
     void shouldCheckInWhenGuestDoesNotExist() {
         Guest newGuest = new Guest("987654321", "Jane Doe");
         Room room =  roomRepository.save(new Room(2L, null));
-        room.setGuest(newGuest);
-        Room checkedInRoom = roomService.checkIn(room);
+
+        Room checkedInRoom = roomService.checkIn(new Room(room.getNumber(), newGuest));
 
         SoftAssertions.assertSoftly(softly -> {
             softly.assertThat(checkedInRoom).isNotNull();
