@@ -57,6 +57,4 @@ public class RoomService {
     public Optional<Room> findEmptyRoom() {
         return roomRepository.findByGuestIsNull();
     }
-
-
 }
