@@ -2,6 +2,8 @@ package expert.os.books.ddd.chapter09.hotels;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.Objects;
@@ -10,6 +12,7 @@ import java.util.Objects;
 public class Guest {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
