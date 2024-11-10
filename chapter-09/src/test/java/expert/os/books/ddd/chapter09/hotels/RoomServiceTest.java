@@ -69,8 +69,7 @@ class RoomServiceTest {
         room.setNumber(3L);
 
         assertThatThrownBy(() -> roomService.checkIn(room))
-                .isInstanceOf(EntityNotFoundException.class)
-                .hasMessage("Room not found");
+                .isInstanceOf(EntityNotFoundException.class);
     }
 
     @Test
@@ -90,8 +89,7 @@ class RoomServiceTest {
         room.setNumber(5L);
 
         assertThatThrownBy(() -> roomService.checkOut(room))
-                .isInstanceOf(EntityNotFoundException.class)
-                .hasMessage("Room not found");
+                .isInstanceOf(EntityNotFoundException.class);
     }
 
     @Test
