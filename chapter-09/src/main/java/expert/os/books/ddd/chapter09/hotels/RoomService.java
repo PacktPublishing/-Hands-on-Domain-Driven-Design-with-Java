@@ -1,9 +1,12 @@
 package expert.os.books.ddd.chapter09.hotels;
 
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -15,6 +18,11 @@ public class RoomService {
     public RoomService(RoomRepository roomRepository, GuestRepository guestRepository) {
         this.roomRepository = roomRepository;
         this.guestRepository = guestRepository;
+    }
+
+    public List<Room> findRooms(PageRequest pageRequest) {
+        Page<Room> page = roomRepository.findAll(pageRequest);
+        return page.getContent();
     }
 
     @Transactional
