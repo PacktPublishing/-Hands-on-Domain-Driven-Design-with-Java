@@ -38,6 +38,13 @@ public class RoomService {
     }
 
     @Transactional
+    public void checkOut(Long number) {
+        Room roomEntity = roomRepository.findByNumber(number)
+                .orElseThrow(() -> new EntityNotFoundException("Room not found, the room number is " + number));
+       this.checkOut(roomEntity);
+    }
+
+    @Transactional
     public Room checkOut(Room room) {
         Room roomEntity = roomRepository.findByNumber(room.getNumber())
                 .orElseThrow(() -> new EntityNotFoundException("Room not found, the room number is " + room.getNumber()));
@@ -58,4 +65,6 @@ public class RoomService {
     public Optional<Room> findEmptyRoom() {
         return roomRepository.findByGuestIsNull();
     }
+
+
 }

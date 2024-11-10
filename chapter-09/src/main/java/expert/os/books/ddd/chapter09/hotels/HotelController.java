@@ -56,8 +56,7 @@ public class HotelController {
     @DeleteMapping("/{number}")
     public ResponseEntity<Void> checkOut(@PathVariable Long number) {
         LOGGER.info("Check out: " + number);
-        var room = roomService.reservation(number);
-        roomService.checkOut(room);
+        roomService.checkOut(number);
         return ResponseEntity.noContent().build();
     }
 }
