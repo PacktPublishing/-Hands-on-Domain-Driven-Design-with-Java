@@ -37,8 +37,8 @@ public class RoomService {
         roomRepository.save(roomEntity);
     }
 
-    public Optional<Room> reservation(String number) {
-        return roomRepository.findByNumber(Long.parseLong(number));
+    public Optional<Room> reservation(Long number) {
+        return roomRepository.findByNumber(number);
     }
 
     public Long countBy() {

@@ -69,4 +69,14 @@ public class Guest {
     public int hashCode() {
         return Objects.hashCode(id);
     }
+
+
+    @Override
+    public String toString() {
+        return "Guest{" +
+                "id=" + id +
+                ", documentNumber='" + documentNumber + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -20,8 +20,8 @@ public class Room {
     @JoinColumn(name = "guest_id", referencedColumnName = "id")
     private Guest guest;
 
-    Room(Long room, Guest guest) {
-        this.number = room;
+    Room(Long number, Guest guest) {
+        this.number = number;
         this.guest = guest;
     }
 
@@ -64,5 +64,13 @@ public class Room {
     @Override
     public int hashCode() {
         return Objects.hashCode(number);
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "number=" + number +
+                ", guest=" + guest +
+                '}';
     }
 }
