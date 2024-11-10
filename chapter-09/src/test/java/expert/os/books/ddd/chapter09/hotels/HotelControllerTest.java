@@ -101,5 +101,12 @@ class HotelControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.guest").doesNotExist());
     }
+
+    @Test
+    void shouldReturn404WhenRoomNotFound() throws Exception {
+        mockMvc.perform(get("/hotels/999")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+    }
 }
 
