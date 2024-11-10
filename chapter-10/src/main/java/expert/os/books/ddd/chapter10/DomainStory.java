@@ -30,4 +30,7 @@ public class DomainStory {
         this.developer = developer;
     }
 
+    public void setStatus(StoryStatus storyStatus) {
+        this.status = storyStatus;
+    }
 }
