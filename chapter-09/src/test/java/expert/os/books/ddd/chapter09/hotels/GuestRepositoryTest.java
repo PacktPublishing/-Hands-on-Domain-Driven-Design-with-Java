@@ -10,7 +10,6 @@ import org.springframework.test.context.ActiveProfiles;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 @ActiveProfiles("test")
@@ -21,7 +20,7 @@ class GuestRepositoryTest {
 
     @BeforeEach
     void setUp() {
-        guestRepository.deleteAll();  // Clear repository before each test
+        guestRepository.deleteAll();
     }
 
     @Test
