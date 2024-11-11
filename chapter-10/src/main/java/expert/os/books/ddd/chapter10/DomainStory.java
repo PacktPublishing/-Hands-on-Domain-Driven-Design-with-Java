@@ -14,7 +14,7 @@ public class DomainStory {
 
     private final String title;
 
-    private StoryStatus status; // e.g., DRAFT, REVIEWED, APPROVED
+    private StoryStatus status;
 
     @Association
     private final DomainExpert domainExpert;
